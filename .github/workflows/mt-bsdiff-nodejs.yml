@@ -11,6 +11,6 @@ jobs:
 
     steps:
     - name: install
-      run: npm install --build-from-source
+      run: npm install
     - name: build
       run: npm run deploy
