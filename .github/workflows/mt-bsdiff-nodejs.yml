@@ -2,15 +2,16 @@ name: mt-bsdiff-nodejs CI
 
 on:
   push:
-    branches: [ master ]
+    branches: [master]
 
 jobs:
   build:
-
     runs-on: windows-latest
 
     steps:
-    - name: install
-      run: npm install
-    - name: build
-      run: npm run deploy
+      - name: enter *
+        run: cd ..
+      - name: install
+        run: npm install
+      - name: build
+        run: npm run deploy
