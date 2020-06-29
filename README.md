@@ -1,0 +1,65 @@
+![NpmLicense](https://img.shields.io/npm/l/express.svg)
+[![Build Status](https://travis-ci.org/Exoway/bsdiff-nodejs.svg?branch=master)](https://travis-ci.org/Exoway/bsdiff-nodejs)
+[![Build status](https://ci.appveyor.com/api/projects/status/wrl9ih6q9t7i3cgn?svg=true)](https://ci.appveyor.com/project/Brouilles/bsdiff-nodejs)
+
+# bsdiff-nodejs
+> An binary diff and patch library based on bsdiff algorithm for NodeJS (Windows, Mac, Linux)
+
+<br>
+<hr>
+<p align="center">
+If you find this package useful, please don't forget to star ⭐️ the repo, as this will help to promote the project.<br>
+</p>
+<hr>
+
+
+## Installation
+
+Install as a dependency for your project (need python 2.x):
+
+```bash
+npm install --save bsdiff-nodejs
+```
+
+## Usage
+
+```javascript
+const bsdiff = require('bsdiff-nodejs');
+bsdiff.diff(oldFile, newFile, patchFile, function(result, err) {}); // Async
+bsdiff.patch(oldfile, newfile, patchfile, function(result, err) {}); // Async
+
+bsdiff.diffSync(oldFile, newFile, patchFile); // Sync
+bsdiff.patchSync(oldfile, newfile, patchfile); // Sync
+```
+
+For example:
+
+```javascript
+const fs = require('fs');
+const path = require('path');
+
+const oldFile = path.join(__dirname, 'resources/react-0.3-stable.zip');
+const newFile = path.join(__dirname, 'resources/react-0.4-stable.zip');
+const patchFile = path.join(__dirname, 'resources/react.patch');
+const generatedFile = path.join(__dirname, 'resources/react-generated.zip');
+
+async function asyncCall() {
+    await bsdiff.diff(oldFile, newFile, patchFile, function (result) {
+        console.log('diff:' + String(result).padStart(4) + '%');
+    });
+
+    await bsdiff.patch(oldFile, generatedFile, patchFile, function (result) {
+        console.log('patch:' + String(result).padStart(4) + '%');
+    });
+}
+  
+asyncCall();
+```
+
+## License
+The original algorithm and implementation was developed by Colin Percival.  The
+algorithm is detailed in his paper, [Naïve Differences of Executable Code](http://www.daemonology.net/papers/bsdiff.pdf).  For more information, visit his
+website at <http://www.daemonology.net/bsdiff/>.  
+
+Copyright 2003-2005 Colin Percival  
+MIT © Exoway

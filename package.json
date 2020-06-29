@@ -1,0 +1,39 @@
+{
+  "name": "mt-bsdiff-nodejs",
+  "description": "An binary diff and patch library based on bsdiff algorithm for NodeJS (Windows, Mac, Linux).",
+  "version": "1.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MIFind/mt-bsdiff-nodejs.git"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "install": "node-pre-gyp install --fallback-to-build || node-gyp rebuild",
+    "install-verbose": "node-gyp rebuild --verbose",
+    "predeploy": "node-pre-gyp rebuild && node-pre-gyp package",
+    "deploy": "node-pre-gyp-github publish --release || exit 0"
+  },
+  "binary": {
+    "module_name": "bsdiff",
+    "module_path": "./build/Release/",
+    "host": "https://github.com/MIFind/mt-bsdiff-nodejs/releases/download/",
+    "remote_path": "{version}"
+  },
+  "keywords": [
+    "bsdiff",
+    "bspatch",
+    "binary diff",
+    "binary patch"
+  ],
+  "license": "MIT",
+  "gypfile": true,
+  "dependencies": {
+    "nan": "^2.14.0",
+    "node-pre-gyp": "^0.15.0"
+  },
+  "devDependencies": {
+    "mocha": "^8.0.1",
+    "node-pre-gyp-github": "^1.4.3"
+  }
+}
