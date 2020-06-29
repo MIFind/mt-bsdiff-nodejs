@@ -1,0 +1,25 @@
+sudo: false
+
+language: node_js
+
+node_js:
+  - 'stable'
+  - '--lts'
+
+os:
+  - linux
+  - osx
+
+deploy:
+  github_token: 4277f50acae1c85507d0a656ff3a5bb53fe92f18 # Set in the settings page of your repository, as a secure variable
+  keep_history: true
+  on:
+    branch: master
+
+# Install scripts. (runs after repo cloning)
+install:
+  - npm install --build-from-source
+
+# Post-install test scripts.
+script:
+  - npm run deploy
