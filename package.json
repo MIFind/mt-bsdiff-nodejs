@@ -1,7 +1,7 @@
 {
   "name": "mt-bsdiff-nodejs",
   "description": "An binary diff and patch library based on bsdiff algorithm for NodeJS (Windows, Mac, Linux).",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/MIFind/mt-bsdiff-nodejs.git"
@@ -17,7 +17,7 @@
   "binary": {
     "module_name": "bsdiff",
     "module_path": "./build/Release/",
-    "host": "https://github.com/MIFind/mt-bsdiff-nodejs/releases/",
+    "host": "https://github.com/MIFind/mt-bsdiff-nodejs/releases/download/",
     "remote_path": "{version}"
   },
   "keywords": [
