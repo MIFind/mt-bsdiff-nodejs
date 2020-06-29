@@ -3,10 +3,10 @@ sudo: false
 language: node_js
 
 node_js:
-  - 'stable'
+  - '- lts/*'
 
 os:
-  - windows
+  - window
   - osx
 
 deploy:
