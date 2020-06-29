@@ -7,8 +7,6 @@ environment:
   matrix:
     - nodejs_version: 'stable'
     - nodejs_version: 'lts'
-  my_variable:
-    secure: fiT8k7gWKsZSTEeNw4HjnH57AlGTi3FOIZ8JMIAi5q1YwHa8isykcUCyxCoywnio
 
 platform:
   - x64
