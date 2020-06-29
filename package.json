@@ -17,7 +17,7 @@
   "binary": {
     "module_name": "bsdiff",
     "module_path": "./build/Release/",
-    "host": "https://github.com/MIFind/mt-bsdiff-nodejs/releases/download/",
+    "host": "https://github.com/MIFind/mt-bsdiff-nodejs/releases/",
     "remote_path": "{version}"
   },
   "keywords": [
