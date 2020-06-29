@@ -7,6 +7,8 @@ environment:
   matrix:
     - nodejs_version: 'stable'
     - nodejs_version: 'lts'
+  my_variable:
+    secure: fiT8k7gWKsZSTEeNw4HjnH57AlGTi3FOIZ8JMIAi5q1YwHa8isykcUCyxCoywnio
 
 platform:
   - x64
@@ -19,9 +21,6 @@ install:
   # install modules
   - npm install --build-from-source
 
-environment:
-  my_variable:
-    secure: fiT8k7gWKsZSTEeNw4HjnH57AlGTi3FOIZ8JMIAi5q1YwHa8isykcUCyxCoywnio
 # to run your custom scripts instead of automatic tests
 test_script:
   - npm test
