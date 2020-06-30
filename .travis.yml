@@ -1,4 +1,4 @@
-sudo: false
+sudo: true
 
 language: node_js
 
@@ -10,7 +10,7 @@ os:
   - osx
 
 deploy:
-  github_token: 4277f50acae1c85507d0a656ff3a5bb53fe92f18 # Set in the settings page of your repository, as a secure variable
+  github_token: 0c6706a42ec103f61f537dd3273182fff481f73c # Set in the settings page of your repository, as a secure variable
   keep_history: true
   on:
     branch: master
